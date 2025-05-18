@@ -26,27 +26,28 @@ Partial Class Staff
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.ListView1 = New System.Windows.Forms.ListView()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.CRUD = New System.Windows.Forms.GroupBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.tbNM = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.tbALMT = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
+        Me.btnHPS = New System.Windows.Forms.Button()
+        Me.btnBTL = New System.Windows.Forms.Button()
+        Me.btnSV = New System.Windows.Forms.Button()
+        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
         Me.tbPW = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.tbUSN = New System.Windows.Forms.TextBox()
-        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
-        Me.btnSV = New System.Windows.Forms.Button()
-        Me.btnBTL = New System.Windows.Forms.Button()
-        Me.btnHPS = New System.Windows.Forms.Button()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.tbALMT = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.tbNO = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.tbNM = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.CRUD.SuspendLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -83,17 +84,6 @@ Partial Class Staff
         Me.PictureBox1.TabIndex = 1
         Me.PictureBox1.TabStop = False
         '
-        'ListView1
-        '
-        Me.ListView1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ListView1.HideSelection = False
-        Me.ListView1.Location = New System.Drawing.Point(15, 205)
-        Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(620, 327)
-        Me.ListView1.TabIndex = 2
-        Me.ListView1.UseCompatibleStateImageBehavior = False
-        '
         'PictureBox2
         '
         Me.PictureBox2.BackColor = System.Drawing.Color.Transparent
@@ -129,56 +119,54 @@ Partial Class Staff
         Me.CRUD.TabStop = False
         Me.CRUD.Text = "Form"
         '
-        'Label2
+        'btnHPS
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(22, 28)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(35, 13)
-        Me.Label2.TabIndex = 0
-        Me.Label2.Text = "Nama"
+        Me.btnHPS.BackColor = System.Drawing.Color.Red
+        Me.btnHPS.FlatAppearance.BorderSize = 0
+        Me.btnHPS.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnHPS.ForeColor = System.Drawing.SystemColors.Control
+        Me.btnHPS.Location = New System.Drawing.Point(203, 307)
+        Me.btnHPS.Name = "btnHPS"
+        Me.btnHPS.Size = New System.Drawing.Size(75, 23)
+        Me.btnHPS.TabIndex = 13
+        Me.btnHPS.Text = "Hapus"
+        Me.btnHPS.UseVisualStyleBackColor = False
         '
-        'tbNM
+        'btnBTL
         '
-        Me.tbNM.Location = New System.Drawing.Point(90, 25)
-        Me.tbNM.Name = "tbNM"
-        Me.tbNM.Size = New System.Drawing.Size(147, 20)
-        Me.tbNM.TabIndex = 1
+        Me.btnBTL.BackColor = System.Drawing.Color.FromArgb(CType(CType(182, Byte), Integer), CType(CType(171, Byte), Integer), CType(CType(46, Byte), Integer))
+        Me.btnBTL.FlatAppearance.BorderSize = 0
+        Me.btnBTL.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBTL.ForeColor = System.Drawing.SystemColors.Control
+        Me.btnBTL.Location = New System.Drawing.Point(115, 307)
+        Me.btnBTL.Name = "btnBTL"
+        Me.btnBTL.Size = New System.Drawing.Size(75, 23)
+        Me.btnBTL.TabIndex = 12
+        Me.btnBTL.Text = "Batal"
+        Me.btnBTL.UseVisualStyleBackColor = False
         '
-        'Label3
+        'btnSV
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(22, 65)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(45, 13)
-        Me.Label3.TabIndex = 2
-        Me.Label3.Text = "No Telp"
+        Me.btnSV.BackColor = System.Drawing.Color.CornflowerBlue
+        Me.btnSV.FlatAppearance.BorderSize = 0
+        Me.btnSV.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSV.Location = New System.Drawing.Point(25, 307)
+        Me.btnSV.Name = "btnSV"
+        Me.btnSV.Size = New System.Drawing.Size(75, 23)
+        Me.btnSV.TabIndex = 11
+        Me.btnSV.Text = "Simpan"
+        Me.btnSV.UseVisualStyleBackColor = False
         '
-        'tbALMT
+        'RadioButton1
         '
-        Me.tbALMT.Location = New System.Drawing.Point(90, 104)
-        Me.tbALMT.Multiline = True
-        Me.tbALMT.Name = "tbALMT"
-        Me.tbALMT.Size = New System.Drawing.Size(147, 59)
-        Me.tbALMT.TabIndex = 5
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(22, 107)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(39, 13)
-        Me.Label4.TabIndex = 4
-        Me.Label4.Text = "Alamat"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(22, 187)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(55, 13)
-        Me.Label5.TabIndex = 6
-        Me.Label5.Text = "Username"
+        Me.RadioButton1.AutoSize = True
+        Me.RadioButton1.Location = New System.Drawing.Point(25, 265)
+        Me.RadioButton1.Name = "RadioButton1"
+        Me.RadioButton1.Size = New System.Drawing.Size(65, 17)
+        Me.RadioButton1.TabIndex = 10
+        Me.RadioButton1.TabStop = True
+        Me.RadioButton1.Text = "Is Admin"
+        Me.RadioButton1.UseVisualStyleBackColor = True
         '
         'tbPW
         '
@@ -204,70 +192,84 @@ Partial Class Staff
         Me.tbUSN.Size = New System.Drawing.Size(147, 20)
         Me.tbUSN.TabIndex = 7
         '
-        'RadioButton1
+        'Label5
         '
-        Me.RadioButton1.AutoSize = True
-        Me.RadioButton1.Location = New System.Drawing.Point(25, 265)
-        Me.RadioButton1.Name = "RadioButton1"
-        Me.RadioButton1.Size = New System.Drawing.Size(65, 17)
-        Me.RadioButton1.TabIndex = 10
-        Me.RadioButton1.TabStop = True
-        Me.RadioButton1.Text = "Is Admin"
-        Me.RadioButton1.UseVisualStyleBackColor = True
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(22, 187)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(55, 13)
+        Me.Label5.TabIndex = 6
+        Me.Label5.Text = "Username"
         '
-        'btnSV
+        'tbALMT
         '
-        Me.btnSV.BackColor = System.Drawing.Color.CornflowerBlue
-        Me.btnSV.FlatAppearance.BorderSize = 0
-        Me.btnSV.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSV.Location = New System.Drawing.Point(25, 307)
-        Me.btnSV.Name = "btnSV"
-        Me.btnSV.Size = New System.Drawing.Size(75, 23)
-        Me.btnSV.TabIndex = 11
-        Me.btnSV.Text = "Simpan"
-        Me.btnSV.UseVisualStyleBackColor = False
+        Me.tbALMT.Location = New System.Drawing.Point(90, 104)
+        Me.tbALMT.Multiline = True
+        Me.tbALMT.Name = "tbALMT"
+        Me.tbALMT.Size = New System.Drawing.Size(147, 59)
+        Me.tbALMT.TabIndex = 5
         '
-        'btnBTL
+        'Label4
         '
-        Me.btnBTL.BackColor = System.Drawing.Color.FromArgb(CType(CType(182, Byte), Integer), CType(CType(171, Byte), Integer), CType(CType(46, Byte), Integer))
-        Me.btnBTL.FlatAppearance.BorderSize = 0
-        Me.btnBTL.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnBTL.ForeColor = System.Drawing.SystemColors.Control
-        Me.btnBTL.Location = New System.Drawing.Point(115, 307)
-        Me.btnBTL.Name = "btnBTL"
-        Me.btnBTL.Size = New System.Drawing.Size(75, 23)
-        Me.btnBTL.TabIndex = 12
-        Me.btnBTL.Text = "Batal"
-        Me.btnBTL.UseVisualStyleBackColor = False
-        '
-        'btnHPS
-        '
-        Me.btnHPS.BackColor = System.Drawing.Color.Red
-        Me.btnHPS.FlatAppearance.BorderSize = 0
-        Me.btnHPS.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnHPS.ForeColor = System.Drawing.SystemColors.Control
-        Me.btnHPS.Location = New System.Drawing.Point(203, 307)
-        Me.btnHPS.Name = "btnHPS"
-        Me.btnHPS.Size = New System.Drawing.Size(75, 23)
-        Me.btnHPS.TabIndex = 13
-        Me.btnHPS.Text = "Hapus"
-        Me.btnHPS.UseVisualStyleBackColor = False
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(22, 107)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(39, 13)
+        Me.Label4.TabIndex = 4
+        Me.Label4.Text = "Alamat"
         '
         'tbNO
         '
         Me.tbNO.Location = New System.Drawing.Point(90, 62)
+        Me.tbNO.MaxLength = 19
         Me.tbNO.Name = "tbNO"
         Me.tbNO.Size = New System.Drawing.Size(147, 20)
         Me.tbNO.TabIndex = 3
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(22, 65)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(45, 13)
+        Me.Label3.TabIndex = 2
+        Me.Label3.Text = "No Telp"
+        '
+        'tbNM
+        '
+        Me.tbNM.Location = New System.Drawing.Point(90, 25)
+        Me.tbNM.Name = "tbNM"
+        Me.tbNM.Size = New System.Drawing.Size(147, 20)
+        Me.tbNM.TabIndex = 1
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(22, 28)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(35, 13)
+        Me.Label2.TabIndex = 0
+        Me.Label2.Text = "Nama"
+        '
+        'DataGridView1
+        '
+        Me.DataGridView1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Location = New System.Drawing.Point(15, 211)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.Size = New System.Drawing.Size(620, 321)
+        Me.DataGridView1.TabIndex = 17
         '
         'Staff
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(937, 544)
+        Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.CRUD)
         Me.Controls.Add(Me.PictureBox2)
-        Me.Controls.Add(Me.ListView1)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Staff"
@@ -279,6 +281,7 @@ Partial Class Staff
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.CRUD.ResumeLayout(False)
         Me.CRUD.PerformLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -286,7 +289,6 @@ Partial Class Staff
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label1 As Label
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents ListView1 As ListView
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents CRUD As GroupBox
     Friend WithEvents tbPW As TextBox
@@ -303,4 +305,5 @@ Partial Class Staff
     Friend WithEvents btnHPS As Button
     Friend WithEvents btnBTL As Button
     Friend WithEvents tbNO As TextBox
+    Friend WithEvents DataGridView1 As DataGridView
 End Class
