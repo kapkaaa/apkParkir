@@ -92,6 +92,12 @@
     <Compile Include="Dashboard.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Keluar.Designer.vb">
+      <DependentUpon>Keluar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Keluar.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Laporan.Designer.vb">
       <DependentUpon>Laporan.vb</DependentUpon>
     </Compile>
@@ -106,6 +112,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="koneksi.vb" />
+    <Compile Include="Masuk.Designer.vb">
+      <DependentUpon>Masuk.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Masuk.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -154,11 +166,17 @@
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Keluar.resx">
+      <DependentUpon>Keluar.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Laporan.resx">
       <DependentUpon>Laporan.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masuk.resx">
+      <DependentUpon>Masuk.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
