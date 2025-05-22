@@ -92,6 +92,12 @@
     <Compile Include="Dashboard.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="formawal.Designer.vb">
+      <DependentUpon>formawal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="formawal.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Keluar.Designer.vb">
       <DependentUpon>Keluar.vb</DependentUpon>
     </Compile>
@@ -118,10 +124,17 @@
     <Compile Include="Masuk.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Mobil.Designer.vb">
+      <DependentUpon>Mobil.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Mobil.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -132,6 +145,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Parkir.Designer.vb">
+      <DependentUpon>Parkir.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Parkir.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Security.Designer.vb">
       <DependentUpon>Security.vb</DependentUpon>
@@ -158,6 +177,12 @@
     <Compile Include="transaksi.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="user.Designer.vb">
+      <DependentUpon>user.vb</DependentUpon>
+    </Compile>
+    <Compile Include="user.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Admin.resx">
@@ -165,6 +190,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formawal.resx">
+      <DependentUpon>formawal.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Keluar.resx">
       <DependentUpon>Keluar.vb</DependentUpon>
@@ -178,11 +206,17 @@
     <EmbeddedResource Include="Masuk.resx">
       <DependentUpon>Masuk.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Mobil.resx">
+      <DependentUpon>Mobil.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Parkir.resx">
+      <DependentUpon>Parkir.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Security.resx">
       <DependentUpon>Security.vb</DependentUpon>
@@ -196,6 +230,9 @@
     <EmbeddedResource Include="transaksi.resx">
       <DependentUpon>transaksi.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="user.resx">
+      <DependentUpon>user.vb</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="My Project\Application.myapp">
@@ -208,6 +245,18 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="asset\download.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="asset\download-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="asset\image-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="asset\Desain tanpa judul %281%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
