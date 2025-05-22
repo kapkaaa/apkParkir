@@ -9,7 +9,7 @@ Public Class Tipe
 
     Private Sub Tipe_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         sql()
-        Dim cmd As New MySqlCommand("SELECT * FROM types", conn)
+        Dim cmd As New MySqlCommand("SELECT p.*, t.name, t.price FROM parkings p left join types t on t.id = p.type_id", conn)
         Dim reader As MySqlDataReader
 
         DataGridView1.Columns.Clear()
@@ -17,11 +17,14 @@ Public Class Tipe
 
         DataGridView1.Columns.Add("name", "Nama Kendaraan")
         DataGridView1.Columns.Add("price", "Biaya Parkir")
+        DataGridView1.Columns.Add("plate_number", "Nomor Plat")
+        DataGridView1.Columns.Add("time_in", "Jam Masuk")
 
         reader = cmd.ExecuteReader()
 
         While reader.Read()
-            DataGridView1.Rows.Add(reader("name"), reader("price"))
+            Dim waktuMasuk As String = Convert.ToDateTime(reader("time_in")).ToString("dd-MM-yyyy HH:mm")
+            DataGridView1.Rows.Add(reader("name"), reader("price"), reader("plate_number"), waktuMasuk)
         End While
 
         reader.Close()
