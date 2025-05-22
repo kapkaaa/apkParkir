@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Laporan
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Laporan
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Laporan))
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
@@ -31,7 +31,6 @@ Partial Class Laporan
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.btnLPR = New System.Windows.Forms.Button()
-        Me.btnCTK = New System.Windows.Forms.Button()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -124,30 +123,18 @@ Partial Class Laporan
         '
         Me.btnLPR.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnLPR.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnLPR.Location = New System.Drawing.Point(578, 164)
+        Me.btnLPR.Location = New System.Drawing.Point(691, 164)
         Me.btnLPR.Name = "btnLPR"
         Me.btnLPR.Size = New System.Drawing.Size(97, 35)
         Me.btnLPR.TabIndex = 21
         Me.btnLPR.Text = "Buat Laporan"
         Me.btnLPR.UseVisualStyleBackColor = True
         '
-        'btnCTK
-        '
-        Me.btnCTK.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnCTK.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnCTK.Location = New System.Drawing.Point(691, 164)
-        Me.btnCTK.Name = "btnCTK"
-        Me.btnCTK.Size = New System.Drawing.Size(97, 35)
-        Me.btnCTK.TabIndex = 22
-        Me.btnCTK.Text = "Cetak Laporan"
-        Me.btnCTK.UseVisualStyleBackColor = True
-        '
         'Laporan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 514)
-        Me.Controls.Add(Me.btnCTK)
         Me.Controls.Add(Me.btnLPR)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.PictureBox2)
@@ -173,5 +160,4 @@ Partial Class Laporan
     Friend WithEvents Label3 As Label
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents btnLPR As Button
-    Friend WithEvents btnCTK As Button
 End Class
