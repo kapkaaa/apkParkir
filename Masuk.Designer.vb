@@ -23,6 +23,7 @@ Partial Class Masuk
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.CRUD = New System.Windows.Forms.GroupBox()
+        Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
@@ -36,7 +37,6 @@ Partial Class Masuk
         Me.Label3 = New System.Windows.Forms.Label()
         Me.tbNM = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.CRUD.SuspendLayout()
@@ -66,6 +66,15 @@ Partial Class Masuk
         Me.CRUD.TabIndex = 18
         Me.CRUD.TabStop = False
         Me.CRUD.Text = "Form"
+        '
+        'DateTimePicker2
+        '
+        Me.DateTimePicker2.Enabled = False
+        Me.DateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Time
+        Me.DateTimePicker2.Location = New System.Drawing.Point(115, 89)
+        Me.DateTimePicker2.Name = "DateTimePicker2"
+        Me.DateTimePicker2.Size = New System.Drawing.Size(386, 20)
+        Me.DateTimePicker2.TabIndex = 19
         '
         'TextBox2
         '
@@ -186,14 +195,6 @@ Partial Class Masuk
         Me.Label2.Size = New System.Drawing.Size(67, 13)
         Me.Label2.TabIndex = 0
         Me.Label2.Text = "Transaksi ID"
-        '
-        'DateTimePicker2
-        '
-        Me.DateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Time
-        Me.DateTimePicker2.Location = New System.Drawing.Point(115, 89)
-        Me.DateTimePicker2.Name = "DateTimePicker2"
-        Me.DateTimePicker2.Size = New System.Drawing.Size(386, 20)
-        Me.DateTimePicker2.TabIndex = 19
         '
         'Label1
         '
