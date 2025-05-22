@@ -5,11 +5,7 @@
         Me.Close()
     End Sub
 
-    Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
-        LoadFormToPanel(New Masuk())
-    End Sub
-
-    Private Sub PictureBox4_Click(sender As Object, e As EventArgs) Handles PictureBox4.Click
+    Private Sub PictureBox4_Click(sender As Object, e As EventArgs)
         LoadFormToPanel(New Keluar())
     End Sub
 
@@ -22,5 +18,9 @@
         End With
         panelContainer.Controls.Add(childForm)
         childForm.Show()
+    End Sub
+
+    Private Sub transaksi_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        LoadFormToPanel(New Keluar)
     End Sub
 End Class
