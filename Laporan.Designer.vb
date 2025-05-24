@@ -133,7 +133,6 @@ Partial Class Laporan
         Me.btnLPR.TabIndex = 21
         Me.btnLPR.Text = "Buat Laporan"
         Me.btnLPR.UseVisualStyleBackColor = True
-        Me.btnLPR.Visible = False
         '
         'Timer1
         '

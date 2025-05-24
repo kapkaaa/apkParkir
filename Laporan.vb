@@ -52,7 +52,7 @@ Public Class Laporan
 
     Private Sub loadTable()
         sql()
-        Dim cmd As New MySqlCommand("SELECT s.name, r.date, r.total_car, r.car_earnings, r.total_bike, r.bike_earnings, r.total_vehicle, r.total_earnings FROM reports r LEFT JOIN users s ON r.security_id= s.id", conn)
+        Dim cmd As New MySqlCommand("SELECT s.name, r.date, r.total_car, r.car_earnings, r.total_bike, r.bike_earnings, r.total_vehicle, r.total_earnings FROM reports r LEFT JOIN users s ON r.security_id= s.id ORDER BY r.id DESC", conn)
         Dim reader As MySqlDataReader
 
         DataGridView1.Columns.Clear()
@@ -69,8 +69,14 @@ Public Class Laporan
 
         reader = cmd.ExecuteReader()
 
+        Dim culture As New Globalization.CultureInfo("id-ID")
+        DataGridView1.DefaultCellStyle.FormatProvider = culture
+        DataGridView1.Columns("date").DefaultCellStyle.Format = "dddd dd MMMM yyyy"
+
         While reader.Read()
-            DataGridView1.Rows.Add(reader("date"), reader("name"), reader("total_car"), reader("car_earnings"), reader("total_bike"), reader("bike_earnings"), reader("total_vehicle"), reader("total_earnings"))
+            Dim rawDate As DateTime = Convert.ToDateTime(reader("date"))
+            DataGridView1.Rows.Add(rawDate, reader("name"), reader("total_car"), reader("car_earnings"), reader("total_bike"), reader("bike_earnings"), reader("total_vehicle"), reader("total_earnings"))
+
         End While
 
         reader.Close()
@@ -88,16 +94,17 @@ Public Class Laporan
     Sub GenerateReportManual()
         sql()
 
-        Dim userCmd As New MySqlCommand("SELECT id FROM users", conn)
+        Dim userCmd As New MySqlCommand("SELECT id, name FROM users", conn)
         Dim userReader As MySqlDataReader = userCmd.ExecuteReader()
 
-        Dim userIds As New List(Of Integer)
+        Dim users As New Dictionary(Of Integer, String)
         While userReader.Read()
-            userIds.Add(Convert.ToInt32(userReader("id")))
+            users.Add(Convert.ToInt32(userReader("id")), Convert.ToString(userReader("name")))
         End While
         userReader.Close()
 
-        For Each userId As Integer In userIds
+        For Each userId As Integer In users.Keys
+            Dim namaU As String = users(userId)
             ' Total Mobil
             Dim totalCar As Integer = 0
             Dim carPrice As Integer = 0
@@ -126,6 +133,10 @@ Public Class Laporan
             ' Pendapatan Motor
             Dim bikeEarnings As Integer = totalBike * bikePrice
 
+            If totalCar = 0 AndAlso totalBike = 0 Then
+                Continue For
+            End If
+
             ' Total Kendaraan
             Dim totalVehicle As Integer = 0
             Dim cmd5 As New MySqlCommand("SELECT counter FROM daily_counters WHERE day = CURDATE()", conn)
@@ -138,6 +149,7 @@ Public Class Laporan
             ' Total Pendapatan
             Dim totalEarnings As Integer = carEarnings + bikeEarnings
 
+
             ' Cek apakah laporan sudah pernah dibuat dengan data yang sama
             Dim checkCmd As New MySqlCommand("
             SELECT COUNT(*) FROM reports 
@@ -145,8 +157,7 @@ Public Class Laporan
             AND total_car = @totalCar 
             AND car_earnings = @carEarnings 
             AND total_bike = @totalBike 
-            AND bike_earnings = @bikeEarnings 
-            AND total_vehicle = @totalVehicle 
+            AND bike_earnings = @bikeEarnings  
             AND total_earnings = @totalEarnings
         ", conn)
 
@@ -155,17 +166,16 @@ Public Class Laporan
             checkCmd.Parameters.AddWithValue("@carEarnings", carEarnings)
             checkCmd.Parameters.AddWithValue("@totalBike", totalBike)
             checkCmd.Parameters.AddWithValue("@bikeEarnings", bikeEarnings)
-            checkCmd.Parameters.AddWithValue("@totalVehicle", totalVehicle)
             checkCmd.Parameters.AddWithValue("@totalEarnings", totalEarnings)
 
             Dim reportExists As Integer = Convert.ToInt32(checkCmd.ExecuteScalar())
 
             If reportExists > 0 Then
-                MessageBox.Show("Laporan sudah pernah di buat untuk operator" & userId)
+                MessageBox.Show("Laporan sudah pernah di buat untuk operator " & namaU)
             Else
 
                 ' Insert ke tabel reports
-                Dim insertCmd As New MySqlCommand("INSERT INTO reports(total_car, car_earnings, total_bike, bike_earnings, total_vehicle, total_earnings, date, security_id) VALUES (@totalCar, @carEarnings, @totalBike, @bikeEarnings, @totalVehicle, @totalEarnings, CURDATE(), @userId)", conn)
+                Dim insertCmd As New MySqlCommand("INSERT INTO reports(total_car, car_earnings, total_bike, bike_earnings, total_vehicle, total_earnings, date, security_id) VALUES (@totalCar, @carEarnings, @totalBike, @bikeEarnings, @totalVehicle, @totalEarnings, CURDATE(), @userId) ON DUPLICATE KEY UPDATE total_car = VALUES(total_car), car_earnings = VALUES(car_earnings), total_bike = VALUES(total_bike), bike_earnings = VALUES(bike_earnings), total_vehicle = VALUES(total_vehicle), total_earnings = VALUES(total_earnings)", conn)
 
                 insertCmd.Parameters.AddWithValue("@totalCar", totalCar)
                 insertCmd.Parameters.AddWithValue("@carEarnings", carEarnings)
@@ -177,11 +187,11 @@ Public Class Laporan
 
                 insertCmd.ExecuteNonQuery()
                 MessageBox.Show("Laporan berhasil dibuat.")
-                loadTable()
-                total()
             End If
         Next
 
+        loadTable()
+        total()
         conn.Close()
     End Sub
 
