@@ -26,6 +26,8 @@ Partial Class Keluar
         Me.Button1 = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.CRUD = New System.Windows.Forms.GroupBox()
+        Me.tbID = New System.Windows.Forms.TextBox()
+        Me.dtpTime = New System.Windows.Forms.DateTimePicker()
         Me.lblHRG = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.tbOP = New System.Windows.Forms.TextBox()
@@ -43,15 +45,14 @@ Partial Class Keluar
         Me.tbTID = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.dtpTime = New System.Windows.Forms.DateTimePicker()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.tbID = New System.Windows.Forms.TextBox()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.CRUD.SuspendLayout()
         Me.SuspendLayout()
         '
         'tbCR
         '
+        Me.tbCR.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.tbCR.Location = New System.Drawing.Point(673, 22)
         Me.tbCR.Name = "tbCR"
         Me.tbCR.Size = New System.Drawing.Size(267, 20)
@@ -105,6 +106,24 @@ Partial Class Keluar
         Me.CRUD.TabIndex = 17
         Me.CRUD.TabStop = False
         Me.CRUD.Text = "Form"
+        '
+        'tbID
+        '
+        Me.tbID.Location = New System.Drawing.Point(321, 240)
+        Me.tbID.Name = "tbID"
+        Me.tbID.Size = New System.Drawing.Size(100, 20)
+        Me.tbID.TabIndex = 24
+        Me.tbID.Visible = False
+        '
+        'dtpTime
+        '
+        Me.dtpTime.CustomFormat = "dd MMMM yyyy"
+        Me.dtpTime.Enabled = False
+        Me.dtpTime.Format = System.Windows.Forms.DateTimePickerFormat.Time
+        Me.dtpTime.Location = New System.Drawing.Point(609, 150)
+        Me.dtpTime.Name = "dtpTime"
+        Me.dtpTime.Size = New System.Drawing.Size(332, 20)
+        Me.dtpTime.TabIndex = 23
         '
         'lblHRG
         '
@@ -270,16 +289,6 @@ Partial Class Keluar
         Me.Label9.TabIndex = 20
         Me.Label9.Text = "Kendaraan Keluar"
         '
-        'dtpTime
-        '
-        Me.dtpTime.CustomFormat = "dd MMMM yyyy"
-        Me.dtpTime.Enabled = False
-        Me.dtpTime.Format = System.Windows.Forms.DateTimePickerFormat.Time
-        Me.dtpTime.Location = New System.Drawing.Point(618, 150)
-        Me.dtpTime.Name = "dtpTime"
-        Me.dtpTime.Size = New System.Drawing.Size(332, 20)
-        Me.dtpTime.TabIndex = 23
-        '
         'Label8
         '
         Me.Label8.AutoSize = True
@@ -289,14 +298,6 @@ Partial Class Keluar
         Me.Label8.Size = New System.Drawing.Size(110, 16)
         Me.Label8.TabIndex = 21
         Me.Label8.Text = "Masukkan NOPOL :"
-        '
-        'tbID
-        '
-        Me.tbID.Location = New System.Drawing.Point(321, 240)
-        Me.tbID.Name = "tbID"
-        Me.tbID.Size = New System.Drawing.Size(100, 20)
-        Me.tbID.TabIndex = 24
-        Me.tbID.Visible = False
         '
         'Keluar
         '
