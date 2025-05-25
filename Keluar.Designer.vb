@@ -162,7 +162,7 @@ Partial Class Keluar
         '
         'dtpDay
         '
-        Me.dtpDay.CustomFormat = "dd MMMM yyyy"
+        Me.dtpDay.CustomFormat = "dddd dd MMMM yyyy"
         Me.dtpDay.Enabled = False
         Me.dtpDay.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.dtpDay.Location = New System.Drawing.Point(134, 150)
