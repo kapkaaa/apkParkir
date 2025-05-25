@@ -95,7 +95,7 @@ Public Class Staff
             Dim rowsAffected As Integer = cmd.ExecuteNonQuery()
             If rowsAffected > 0 Then
                 MessageBox.Show("Data berhasil disimpan!")
-                loadData()
+                bersih()
             Else
                 MessageBox.Show("Gagal menyimpan data.")
             End If
