@@ -28,6 +28,7 @@ Partial Class Staff
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.CRUD = New System.Windows.Forms.GroupBox()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.btnHPS = New System.Windows.Forms.Button()
         Me.btnBTL = New System.Windows.Forms.Button()
         Me.btnSV = New System.Windows.Forms.Button()
@@ -43,6 +44,7 @@ Partial Class Staff
         Me.tbNM = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -98,6 +100,8 @@ Partial Class Staff
         'CRUD
         '
         Me.CRUD.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.CRUD.Controls.Add(Me.TextBox2)
+        Me.CRUD.Controls.Add(Me.TextBox1)
         Me.CRUD.Controls.Add(Me.btnHPS)
         Me.CRUD.Controls.Add(Me.btnBTL)
         Me.CRUD.Controls.Add(Me.btnSV)
@@ -119,13 +123,21 @@ Partial Class Staff
         Me.CRUD.TabStop = False
         Me.CRUD.Text = "Form"
         '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(25, 143)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(22, 20)
+        Me.TextBox1.TabIndex = 14
+        Me.TextBox1.Visible = False
+        '
         'btnHPS
         '
         Me.btnHPS.BackColor = System.Drawing.Color.Red
         Me.btnHPS.FlatAppearance.BorderSize = 0
         Me.btnHPS.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnHPS.ForeColor = System.Drawing.SystemColors.Control
-        Me.btnHPS.Location = New System.Drawing.Point(203, 307)
+        Me.btnHPS.Location = New System.Drawing.Point(16, 305)
         Me.btnHPS.Name = "btnHPS"
         Me.btnHPS.Size = New System.Drawing.Size(75, 23)
         Me.btnHPS.TabIndex = 13
@@ -138,7 +150,7 @@ Partial Class Staff
         Me.btnBTL.FlatAppearance.BorderSize = 0
         Me.btnBTL.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnBTL.ForeColor = System.Drawing.SystemColors.Control
-        Me.btnBTL.Location = New System.Drawing.Point(115, 307)
+        Me.btnBTL.Location = New System.Drawing.Point(106, 305)
         Me.btnBTL.Name = "btnBTL"
         Me.btnBTL.Size = New System.Drawing.Size(75, 23)
         Me.btnBTL.TabIndex = 12
@@ -150,7 +162,7 @@ Partial Class Staff
         Me.btnSV.BackColor = System.Drawing.Color.CornflowerBlue
         Me.btnSV.FlatAppearance.BorderSize = 0
         Me.btnSV.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSV.Location = New System.Drawing.Point(25, 307)
+        Me.btnSV.Location = New System.Drawing.Point(194, 305)
         Me.btnSV.Name = "btnSV"
         Me.btnSV.Size = New System.Drawing.Size(75, 23)
         Me.btnSV.TabIndex = 11
@@ -256,11 +268,21 @@ Partial Class Staff
         Me.DataGridView1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Location = New System.Drawing.Point(15, 211)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.Size = New System.Drawing.Size(620, 321)
         Me.DataGridView1.TabIndex = 17
+        '
+        'TextBox2
+        '
+        Me.TextBox2.Location = New System.Drawing.Point(53, 143)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(22, 20)
+        Me.TextBox2.TabIndex = 15
+        Me.TextBox2.Visible = False
         '
         'Staff
         '
@@ -306,4 +328,6 @@ Partial Class Staff
     Friend WithEvents btnBTL As Button
     Friend WithEvents tbNO As TextBox
     Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents TextBox2 As TextBox
 End Class
