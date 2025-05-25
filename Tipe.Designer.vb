@@ -25,13 +25,17 @@ Partial Class Tipe
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Tipe))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.dtp1 = New System.Windows.Forms.DateTimePicker()
+        Me.dtp2 = New System.Windows.Forms.DateTimePicker()
+        Me.btnCR = New System.Windows.Forms.Button()
+        Me.tbCR = New System.Windows.Forms.TextBox()
         Me.Panel1.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -52,9 +56,21 @@ Partial Class Tipe
         Me.Label1.ForeColor = System.Drawing.SystemColors.Control
         Me.Label1.Location = New System.Drawing.Point(100, 37)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(202, 25)
+        Me.Label1.Size = New System.Drawing.Size(177, 25)
         Me.Label1.TabIndex = 2
-        Me.Label1.Text = "Master Kendaraan"
+        Me.Label1.Text = "Data Kendaraan"
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.InitialImage = CType(resources.GetObject("PictureBox1.InitialImage"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(15, 12)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(70, 71)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 1
+        Me.PictureBox1.TabStop = False
         '
         'DataGridView1
         '
@@ -80,23 +96,53 @@ Partial Class Tipe
         Me.PictureBox2.TabIndex = 19
         Me.PictureBox2.TabStop = False
         '
-        'PictureBox1
+        'dtp1
         '
-        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.InitialImage = CType(resources.GetObject("PictureBox1.InitialImage"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(15, 12)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(70, 71)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 1
-        Me.PictureBox1.TabStop = False
+        Me.dtp1.CustomFormat = "dddd dd MMMM yyyy"
+        Me.dtp1.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.dtp1.Location = New System.Drawing.Point(160, 170)
+        Me.dtp1.Name = "dtp1"
+        Me.dtp1.Size = New System.Drawing.Size(200, 20)
+        Me.dtp1.TabIndex = 22
+        Me.dtp1.Value = New Date(2025, 5, 1, 0, 0, 0, 0)
+        '
+        'dtp2
+        '
+        Me.dtp2.CustomFormat = "dddd dd MMMM yyyy"
+        Me.dtp2.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.dtp2.Location = New System.Drawing.Point(380, 170)
+        Me.dtp2.Name = "dtp2"
+        Me.dtp2.Size = New System.Drawing.Size(200, 20)
+        Me.dtp2.TabIndex = 23
+        '
+        'btnCR
+        '
+        Me.btnCR.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnCR.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnCR.Location = New System.Drawing.Point(853, 167)
+        Me.btnCR.Name = "btnCR"
+        Me.btnCR.Size = New System.Drawing.Size(71, 23)
+        Me.btnCR.TabIndex = 25
+        Me.btnCR.Text = "Cari"
+        Me.btnCR.UseVisualStyleBackColor = True
+        '
+        'tbCR
+        '
+        Me.tbCR.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.tbCR.Location = New System.Drawing.Point(670, 170)
+        Me.tbCR.Name = "tbCR"
+        Me.tbCR.Size = New System.Drawing.Size(177, 20)
+        Me.tbCR.TabIndex = 24
         '
         'Tipe
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(936, 537)
+        Me.Controls.Add(Me.btnCR)
+        Me.Controls.Add(Me.tbCR)
+        Me.Controls.Add(Me.dtp2)
+        Me.Controls.Add(Me.dtp1)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.Panel1)
@@ -106,10 +152,11 @@ Partial Class Tipe
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -118,4 +165,8 @@ Partial Class Tipe
     Friend WithEvents Label1 As Label
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents dtp1 As DateTimePicker
+    Friend WithEvents dtp2 As DateTimePicker
+    Friend WithEvents btnCR As Button
+    Friend WithEvents tbCR As TextBox
 End Class
