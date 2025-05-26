@@ -17,7 +17,6 @@ Public Class karcis
     End Sub
 
     Private Sub karcis_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        MessageBox.Show("id " & parkingId)
         If jenisKendaraan.ToLower() = "mobil" Then
             PictureBox1.Image = My.Resources.image_removebg_preview 'pastikan gambar mobil sudah ada di Resources
             LabelJen.Text = "Pembayaran Parkir Mobil"
