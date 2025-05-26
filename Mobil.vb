@@ -6,12 +6,12 @@ Public Class Mobil
         Dim tanggal As String = dtpDay.Value.ToString("yyyy:MM:dd")
         Dim jam As String = dtpTime.Value.ToString("yyyy:MM:dd HH:mm:ss")
         sql()
-        Dim cmd As New MySqlCommand("INSERT INTO parkings (transaction_id, plate_number, type_id, has_paid, time_in, date) " & "VALUES (@transaction_id, @plate, 2, 0, @time_in, @date_in)", conn)
+        Dim cmd As New MySqlCommand("INSERT INTO parkings (transaction_id, plate_number, type_id, has_paid, time_in, date) " & "VALUES (@transaction_id, @plate, 2, 0, @time_in, @date_in); SELECT LAST_INSERT_ID();", conn)
         cmd.Parameters.AddWithValue("@transaction_id", code)
         cmd.Parameters.AddWithValue("@plate", tbNO.Text)
         cmd.Parameters.AddWithValue("@time_in", jam)
         cmd.Parameters.AddWithValue("@date_in", tanggal)
-        cmd.ExecuteNonQuery()
+        Dim lastInsertId As Integer = Convert.ToInt32(cmd.ExecuteScalar())
 
         Dim cmdcd As New MySqlCommand("select counter from daily_counters where day = @day", conn)
         cmdcd.Parameters.AddWithValue("@day", tanggal)
@@ -32,6 +32,10 @@ Public Class Mobil
         End If
 
         MessageBox.Show("Data Mobil Tersimpan")
+        Dim formKarcis As New karcis
+        formKarcis.parkingId = lastInsertId
+        formKarcis.jenisKendaraan = "mobil"
+        formKarcis.Show()
         tbNO.Clear()
         Me.ParentForm.Close()
 

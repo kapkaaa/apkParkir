@@ -98,6 +98,12 @@
     <Compile Include="formawal.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="karcis.Designer.vb">
+      <DependentUpon>karcis.vb</DependentUpon>
+    </Compile>
+    <Compile Include="karcis.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Keluar.Designer.vb">
       <DependentUpon>Keluar.vb</DependentUpon>
     </Compile>
@@ -193,6 +199,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="formawal.resx">
       <DependentUpon>formawal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="karcis.resx">
+      <DependentUpon>karcis.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Keluar.resx">
       <DependentUpon>Keluar.vb</DependentUpon>
