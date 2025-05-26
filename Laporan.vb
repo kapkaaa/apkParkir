@@ -138,13 +138,13 @@ Public Class Laporan
             End If
 
             ' Total Kendaraan
-            Dim totalVehicle As Integer = 0
-            Dim cmd5 As New MySqlCommand("SELECT counter FROM daily_counters WHERE day = CURDATE()", conn)
-            cmd5.Parameters.AddWithValue("@userId", userId)
-            Dim obj = cmd5.ExecuteScalar()
-            If obj IsNot Nothing AndAlso Not IsDBNull(obj) Then
-                totalVehicle = Convert.ToInt32(obj)
-            End If
+            Dim totalVehicle As Integer = totalBike + totalCar
+            'Dim cmd5 As New MySqlCommand("SELECT counter FROM daily_counters WHERE day = CURDATE()", conn)
+            'cmd5.Parameters.AddWithValue("@userId", userId)
+            'Dim obj = cmd5.ExecuteScalar()
+            'If obj IsNot Nothing AndAlso Not IsDBNull(obj) Then
+            '    totalVehicle = Convert.ToInt32(obj)
+            'End If
 
             ' Total Pendapatan
             Dim totalEarnings As Integer = carEarnings + bikeEarnings
@@ -159,6 +159,7 @@ Public Class Laporan
             AND total_bike = @totalBike 
             AND bike_earnings = @bikeEarnings  
             AND total_earnings = @totalEarnings
+            AND total_vehicle = @totalVehicle
         ", conn)
 
             checkCmd.Parameters.AddWithValue("@userId", userId)
@@ -167,6 +168,7 @@ Public Class Laporan
             checkCmd.Parameters.AddWithValue("@totalBike", totalBike)
             checkCmd.Parameters.AddWithValue("@bikeEarnings", bikeEarnings)
             checkCmd.Parameters.AddWithValue("@totalEarnings", totalEarnings)
+            checkCmd.Parameters.AddWithValue("@totalVehicle", totalVehicle)
 
             Dim reportExists As Integer = Convert.ToInt32(checkCmd.ExecuteScalar())
 
